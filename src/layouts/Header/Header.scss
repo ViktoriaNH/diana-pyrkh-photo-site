@@ -6,10 +6,11 @@
   padding-block: fluid(22, 14);
 
   &__text {
-    @include flex-center;
-    
+    @include mobile {
+      position: absolute;
+    }
 
-    background-color: aqua;
+    @include flex-center;
 
     display: flex;
     flex-direction: column;
@@ -33,136 +34,77 @@
     }
   }
 
+  &__menu {
+    @include mobile {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: var(--color-white);
+      transform: translateX(110%);
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      transition-duration: var(--transition-duration-longer);
+
+      @include flex-center;
+    }
+  }
+
+  &__menu.active {
+    transform: translateX(0);
+  }
+
   &__menu-list {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     gap: 15px;
     font-family: var(--font-accent);
     font-weight: 300;
 
-    @include fluid-text(34, 14); 
+    @include fluid-text(34, 24);
 
     @include mobile {
-      @include hide;
+      flex-direction: column;
+      row-gap: 16px;
+      @include flex-center;
     }
   }
 
-  &__menu-item:not(:last-child)::after {
-    content: " ✦";
-    margin-left: 8px;
-    color: var(--color-brown-light);
+  &__menu-item {
+    position: relative;
+
+    // Общие стили для псевдоэлементов
+    &::before,
+    &::after {
+      content: "❧";
+      color: var(--color-brown-light);
+      font-size: 0.6em;
+      vertical-align: baseline;
+    }
+
+    // Для десктопа: только ::after у всех кроме последнего
+    @include mobile-above {
+      &::before {
+        content: none; // отключаем before на десктопе
+      }
+      &:last-child::after {
+        content: none; // убираем after у последнего
+      }
+      &:not(:last-child)::after {
+        margin-left: 14px;
+      }
+    }
+
+    // Для мобильных (пример миксина)
+    @include mobile {
+      &::before {
+        margin-right: 8px;
+      }
+      &::after {
+        margin-left: 8px;
+      }
+    }
   }
-
-
-  //   &.is-fixed {
-  //     position: fixed;
-  //   }
-
-  //   &__inner {
-  //     display: flex;
-  //     justify-content: space-between;
-  //     align-items: center;
-  //     column-gap: 16px;
-  //   }
-
-  //   &__overlay-menu-dialog {
-  //     position: fixed;
-  //     inset: 0;
-  //     flex-direction: column-reverse;
-  //     justify-content: start;
-  //     row-gap: 16px;
-  //     width: 100%;
-  //     height: 100%;
-  //     padding: var(--container-padding-x);
-  //     background-color: var(--color-black-20);
-  //     border: none;
-  //     transition-duration: var(--transition-duration);
-  //     transition-behavior: allow-discrete;
-
-  //     @include tablet-above {
-  //       display: contents;
-  //     }
-
-  //     @mixin starting-styles {
-  //       opacity: 0;
-  //       translate: 50%;
-  //     }
-  //     &[open] {
-  //       display: flex;
-
-  //       @starting-style {
-  //         @include starting-styles;
-  //       }
-  //     }
-
-  //     &:not([open]) {
-  //       @include starting-styles;
-  //     }
-  //   }
-
-  //   &__menu {
-  //     border-radius: var(--border-radius-l);
-
-  //     @include laptop {
-  //       border-radius: var(--border-radius-m);
-  //     }
-
-  //     @include tablet-above {
-  //       padding: fluid-to-laptop(10, 8);
-  //       background-color: var(--color-black-06);
-  //       outline: var(--border-width-l) solid var(--color-black-12);
-  //     }
-
-  //     @include tablet {
-  //       display: flex;
-  //       justify-content: center;
-  //       height: 100%;
-  //       border-radius: 0;
-  //       overflow-y: auto;
-  //     }
-
-  //     &-list {
-  //       display: flex;
-  //       align-items: center;
-  //       column-gap: 6px;
-
-  //       @include tablet {
-  //         flex-direction: column;
-  //         row-gap: 16px;
-  //         margin-block: auto;
-  //       }
-  //     }
-
-  //     &-link {
-  //       padding: fluid-to-laptop(14, 12) fluid-to-laptop(24, 20);
-  //       color: var(--color-gray-75);
-  //       border-radius: var(--border-radius-s);
-
-  //       @include tablet {
-  //         font-size: 20px;
-  //       }
-
-  //       @include hover {
-  //         color: var(--color-white);
-  //         background-color: var(--color-red-60);
-  //       }
-
-  //       &.is-active {
-  //         font-weight: 500;
-  //         color: var(--color-white);
-  //         background-color: var(--color-black-10);
-  //         pointer-events: none;
-  //       }
-  //     }
-  //   }
-
-  //   &__actions {
-  //     display: flex;
-  //     align-items: center;
-  //     column-gap: 10px;
-  //   }
-
-  //   &__burger-button {
-  //     position: relative;
-  //   }
 }

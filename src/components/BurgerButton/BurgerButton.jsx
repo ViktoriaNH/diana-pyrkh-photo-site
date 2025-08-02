@@ -1,34 +1,26 @@
-import classNames from 'classnames';
-import './BurgerButton.scss';
+import "./BurgerButton.scss";
 
-const BurgerButton = ({ className, extraAttrs, onClick }) => {
-  const title = 'Open menu'
-
-  return (
-    <button
-      className={classNames(className, 'burger-button')}
-      type="button"
-      aria-label={title}
-      title={title}
-      {...extraAttrs}
-      onClick={onClick} 
-    >
-      <svg className="burger-button__svg" width="30" height="30" viewBox="0 0 100 100">
-        <path
-          className="burger-button__line burger-button__line--1"
-          d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
-        />
-        <path
-          className="burger-button__line burger-button__line--2"
-          d="M 20,50 H 80"
-        />
-        <path
-          className="burger-button__line burger-button__line--3"
-          d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
-        />
-      </svg>
-    </button>
-  )
-}
+const BurgerButton = ({ isActive, onClick }) => (
+  <button
+    className="header__menu-button visible-mobile"
+    onClick={onClick}
+    aria-label={isActive ? "Close menu" : "Open menu"}
+  >
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      {isActive ? (
+        <>
+          <line x1="2" y1="2" x2="22" y2="22" stroke="currentColor" strokeWidth="1" />
+          <line x1="22" y1="2" x2="2" y2="22" stroke="currentColor" strokeWidth="1" />
+        </>
+      ) : (
+        <>
+          <rect y="4" width="24" height="1" fill="currentColor" />
+          <rect y="11" width="19" height="1" fill="currentColor" />
+          <rect y="18" width="15" height="1" fill="currentColor" />
+        </>
+      )}
+    </svg>
+  </button>
+);
 
 export default BurgerButton;

@@ -53,15 +53,15 @@
   translate: -50%;
 }
 
-// миксин для создания квадратных элементов 
+// миксин для создания квадратных элементов
 @mixin square($size) {
-    width: $size;
-    height: $size;
+  width: $size;
+  height: $size;
 }
 
-// миксин для визуального соерытия элемента 
+// миксин для визуального соерытия элемента
 @mixin visually-hidden {
-  position: absolute !important; 
+  position: absolute !important;
   width: 1px !important;
   height: 1px !important;
   margin: -1px !important;
@@ -73,16 +73,15 @@
   overflow: hidden !important;
 }
 
-// стили состояния фокуса 
+// стили состояния фокуса
 @mixin focus-visible {
-    outline: 2px dashed var(--color-black);
-    outline-offset: 4px;
-    transition-duration: 0s !important;
+  outline: 2px dashed var(--color-black);
+  outline-offset: 4px;
+  transition-duration: 0s !important;
 }
 
-// состояние дисэйблед для кнопок, полей ввода 
+// состояние дисэйблед для кнопок, полей ввода
 @mixin disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
-
