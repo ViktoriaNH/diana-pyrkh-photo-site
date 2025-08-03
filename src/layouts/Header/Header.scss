@@ -1,40 +1,56 @@
 .header {
   position: sticky;
+  background-color: var(--color-white);
   z-index: 100;
   top: 0;
   width: 100%;
-  padding-block: fluid(22, 14);
+  padding-top: fluid(22, 14);
 
   &__text {
+      width: 100%;
     @include mobile {
       position: absolute;
+      background-color: var(--color-white);
+    }
+    @include mobile-above {
+      &.hidden-on-scroll {
+        opacity: 0;
+        visibility: hidden;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden;
+      }
     }
 
     @include flex-center;
-
-    display: flex;
     flex-direction: column;
-    column-gap: 10px;
+    // width: 100%;
 
     span {
       font-family: var(--font-accent);
       color: var(--color-brown);
 
       &:nth-child(-n + 2) {
-        @include fluid-text(60, 24);
+        @include fluid-text(60, 18);
         line-height: 0.8;
         font-weight: 400;
       }
 
       &:last-of-type {
-        @include fluid-text(32, 12);
+        @include fluid-text(32, 10);
         font-weight: 300;
         letter-spacing: 5px;
       }
     }
   }
 
-  &__menu {
+  &__menu  {
+
+    position: sticky;
+    top: 0;
+    z-index: 110;
+
     @include mobile {
       position: fixed;
       top: 0;
@@ -56,14 +72,13 @@
   }
 
   &__menu-list {
-    margin-top: 50px;
     display: flex;
     justify-content: center;
     gap: 15px;
     font-family: var(--font-accent);
     font-weight: 300;
 
-    @include fluid-text(34, 24);
+    @include fluid-text(34, 10);
 
     @include mobile {
       flex-direction: column;

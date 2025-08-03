@@ -3,16 +3,19 @@ import menuItems from "../../data/menuItems";
 import "./Header.scss";
 import { useState } from "react";
 import BurgerButton from "../../components/BurgerButton/BurgerButton";
+import useScrollPosition from "../../hooks/useScrollPosition";
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+   const scrolled = useScrollPosition(); 
 
   return (
     <header className="header">
       <div className="header__inner container">
-        <div className="header__text">
+        {/* <div className="header__text"> */}
+                <div className={`header__text ${scrolled ? "hidden-on-scroll" : ""}`}>
           <span>DIANA</span>
-          <span>PYPKH</span>
+          <span>PYRKH</span>
           <span>memories in photos</span>
         </div>
 

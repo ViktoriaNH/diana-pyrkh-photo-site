@@ -3,7 +3,7 @@
   border: none;
   position: absolute;
   right: 5%;
-  bottom: -90%;
+  z-index: 200;
 
   svg rect {
     fill: var(--color-brown);

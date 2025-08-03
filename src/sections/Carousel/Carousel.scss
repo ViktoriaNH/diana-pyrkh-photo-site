@@ -1,0 +1,25 @@
+.carousel__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ffffff60;
+
+  @include hover {
+    color: #ffffff90;
+    transition-duration: var(--transition-duration);
+  }
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  background-color: #ffffff90;
+}
+
+.swiper-slide {
+  @include mobile {
+    height: 100%;
+  }
+}
