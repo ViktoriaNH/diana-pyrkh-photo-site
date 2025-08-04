@@ -1,3 +1,5 @@
+
+
 import "swiper/css"; // базовые стили
 import "swiper/css/navigation"; // если нужна навигация
 import "swiper/css/pagination"; // если нужна пагинация

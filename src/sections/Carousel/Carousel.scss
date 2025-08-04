@@ -20,6 +20,8 @@
 
 .swiper-slide {
   @include mobile {
-    height: 100%;
+    margin-top: 80px;
+    height: 100vh;
+     --swiper-navigation-size: 10px;
   }
 }

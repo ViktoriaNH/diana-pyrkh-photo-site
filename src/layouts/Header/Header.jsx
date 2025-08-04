@@ -7,19 +7,19 @@ import useScrollPosition from "../../hooks/useScrollPosition";
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-   const scrolled = useScrollPosition(); 
+  const scrolled = useScrollPosition();
 
   return (
     <header className="header">
       <div className="header__inner container">
-        {/* <div className="header__text"> */}
-                <div className={`header__text ${scrolled ? "hidden-on-scroll" : ""}`}>
+       <div className='header__text'>     
           <span>DIANA</span>
           <span>PYRKH</span>
           <span>memories in photos</span>
         </div>
-
-        <nav className={`header__menu ${isMenuOpen ? "active" : ""}`}>
+        <nav
+          className={`header__menu ${scrolled ? "fixed show" : ""} ${isMenuOpen ? "active" : ""}`}
+        >
           <ul className="header__menu-list">
             {menuItems.map((item) => (
               <li className="header__menu-item" key={item.id}>
@@ -33,6 +33,7 @@ const Header = () => {
             ))}
           </ul>
         </nav>
+
         <BurgerButton
           isActive={isMenuOpen}
           onClick={() => setMenuOpen(!isMenuOpen)}

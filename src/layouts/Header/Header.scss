@@ -1,31 +1,25 @@
 .header {
-  position: sticky;
-  background-color: var(--color-white);
+  position: relative;
   z-index: 100;
   top: 0;
   width: 100%;
-  padding-top: fluid(22, 14);
+  background-color: var(--color-white);
+
+  &__inner {
+    position: relative;
+  }
 
   &__text {
-      width: 100%;
+    width: 100%;
+    flex-direction: column;
+    padding-block: fluid(22, 16);
+
     @include mobile {
       position: absolute;
       background-color: var(--color-white);
     }
-    @include mobile-above {
-      &.hidden-on-scroll {
-        opacity: 0;
-        visibility: hidden;
-        height: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        overflow: hidden;
-      }
-    }
 
     @include flex-center;
-    flex-direction: column;
-    // width: 100%;
 
     span {
       font-family: var(--font-accent);
@@ -45,11 +39,17 @@
     }
   }
 
-  &__menu  {
+  &__menu {
+    padding-block: fluid(18, 14);
+    background-color: var(--color-white);
 
-    position: sticky;
-    top: 0;
-    z-index: 110;
+    &.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 99;
+    }
 
     @include mobile {
       position: fixed;
@@ -78,7 +78,7 @@
     font-family: var(--font-accent);
     font-weight: 300;
 
-    @include fluid-text(34, 10);
+    @include fluid-text(34, 20);
 
     @include mobile {
       flex-direction: column;
