@@ -1,0 +1,29 @@
+.about-me {
+  &__inner {
+    display: flex;
+    // gap: fluid(20, 10);
+    align-items: center;
+
+    @include mobile-s {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    padding: fluid(25, 10);
+    display: flex;
+    flex-direction: column;
+    gap: fluid(15, 5);
+    text-align: center;
+  }
+
+  p {
+    font-size: fluid(28, 12);
+  }
+
+  &__photo-wrapper {
+     @include mobile-s {
+      padding-inline: 80px;
+    }
+  }
+}

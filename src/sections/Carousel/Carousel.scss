@@ -1,15 +1,26 @@
-.carousel__image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-.swiper-button-prev,
-.swiper-button-next {
-  color: #ffffff60;
+.carousel {
+  --swiper-navigation-size: 40px;
 
-  @include hover {
-    color: #ffffff90;
-    transition-duration: var(--transition-duration);
+  @include laptop {
+    --swiper-navigation-size: 30px;
+  }
+  @include tablet {
+    --swiper-navigation-size: 20px;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #ffffff30;
+
+    @include hover {
+      color: #ffffff60;
+      transition-duration: var(--transition-duration);
+    }
   }
 }
 
@@ -20,8 +31,7 @@
 
 .swiper-slide {
   @include mobile {
-    margin-top: 80px;
-    height: 100vh;
-     --swiper-navigation-size: 10px;
+    margin-top: fluid(120, 80);
+    height: auto;
   }
 }

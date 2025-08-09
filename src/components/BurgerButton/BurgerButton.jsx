@@ -1,10 +1,14 @@
 import "./BurgerButton.scss";
 
-const BurgerButton = ({ isActive, onClick }) => (
+const BurgerButton = ({ isActive, onClick }) => {
+  const burgerButtonTitle = 'isActive ? "Закрыть меню" : "Открыть меню"'
+  return (
   <button
     className="header__menu-button visible-mobile"
+    type='button'
     onClick={onClick}
-    aria-label={isActive ? "Close menu" : "Open menu"}
+    aria-label={burgerButtonTitle}
+    title={burgerButtonTitle}
   >
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
       {isActive ? (
@@ -21,6 +25,7 @@ const BurgerButton = ({ isActive, onClick }) => (
       )}
     </svg>
   </button>
-);
+  )
+};
 
 export default BurgerButton;

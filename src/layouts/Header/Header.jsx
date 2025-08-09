@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="header__inner container">
+      <div className="header__inner">
        <div className='header__text'>     
           <span>DIANA</span>
           <span>PYRKH</span>

@@ -16,7 +16,6 @@
 
     @include mobile {
       position: absolute;
-      background-color: var(--color-white);
     }
 
     @include flex-center;

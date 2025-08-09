@@ -33,54 +33,43 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Poiret One';
+    src: url('../assets/fonts/PoiretOne-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 
 @font-face {
-    font-family: 'Hind Vadodara';
-    src: url('../assets/fonts/HindVadodara-Light.woff2') format('woff2');
+    font-family: 'Ysabeau SC';
+    src: url('../assets/fonts/YsabeauSC-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Hind Vadodara';
-    src: url('../assets/fonts/HindVadodara-Regular.woff2') format('woff2');
+    font-family: 'Ysabeau SC';
+    src: url('../assets/fonts/YsabeauSC-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Hind Vadodara';
-    src: url('../assets/fonts/HindVadodara-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Playfair Display';
-    src: url('../assets/fonts/PlayfairDisplay-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Playfair Display';
-    src: url('../assets/fonts/PlayfairDisplay-Medium.woff2') format('woff2');
+    font-family: 'Ysabeau SC';
+    src: url('../assets/fonts/YsabeauSC-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Playfair Display';
-    src: url('../assets/fonts/PlayfairDisplay-SemiBold.woff2') format('woff2');
+    font-family: 'Ysabeau SC';
+    src: url('../assets/fonts/YsabeauSC-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
-@font-face {
-    font-family: 'Playfair Display';
-    src: url('../assets/fonts/PlayfairDisplay-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
+
+
