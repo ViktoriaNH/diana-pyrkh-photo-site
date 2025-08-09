@@ -1,7 +1,6 @@
 .about-me {
   &__inner {
     display: flex;
-    // gap: fluid(20, 10);
     align-items: center;
 
     @include mobile-s {
@@ -22,8 +21,8 @@
   }
 
   &__photo-wrapper {
-     @include mobile-s {
-      padding-inline: 80px;
+    @include mobile-s {
+      padding-inline: 60px;
     }
   }
 }

@@ -1,0 +1,14 @@
+.button {
+  width: fluid(180, 90);
+  height: fluid(70, 35);
+  padding: fluid(10, 5);
+  color: var(--color-black);
+  border: 1px solid var(--color-brown-dark);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center; /* вертикальное центрирование */
+  justify-content: center;
+  font-size: fluid(30, 15);
+  user-select: none;
+  margin: 0 auto;
+}

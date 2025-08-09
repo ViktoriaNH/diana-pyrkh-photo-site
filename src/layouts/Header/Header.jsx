@@ -35,6 +35,7 @@ const Header = () => {
         </nav>
 
         <BurgerButton
+          className='button'
           isActive={isMenuOpen}
           onClick={() => setMenuOpen(!isMenuOpen)}
         />

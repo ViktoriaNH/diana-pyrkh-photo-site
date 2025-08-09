@@ -1,0 +1,30 @@
+.why-choose-me {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(15, 5);
+    text-align: center;
+  }
+}
+
+.why-choose-me__photo-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+
+  .why-choose-me__photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.why-choose-me__info {
+  padding: fluid(25, 10);
+  gap: fluid(15, 5);
+}
+
+p {
+  font-size: fluid(28, 12);
+}

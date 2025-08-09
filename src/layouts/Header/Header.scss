@@ -22,10 +22,10 @@
 
     span {
       font-family: var(--font-accent);
-      color: var(--color-brown);
+      color: var(--color-brown-dark);
 
       &:nth-child(-n + 2) {
-        @include fluid-text(60, 18);
+        @include fluid-text(80, 18);
         line-height: 0.8;
         font-weight: 400;
       }
@@ -77,7 +77,7 @@
     font-family: var(--font-accent);
     font-weight: 300;
 
-    @include fluid-text(34, 20);
+    @include fluid-text(38, 20);
 
     @include mobile {
       flex-direction: column;
